@@ -1,0 +1,3 @@
+include ':lib-truetypeparser'
+include ':app'
+rootProject.name = "FontConfirmation"

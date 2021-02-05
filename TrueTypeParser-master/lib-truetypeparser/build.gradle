@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion "24.0.3"
+
+  defaultConfig {
+    minSdkVersion 7
+    targetSdkVersion 26
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+}
+
+apply from: '../gradle-mvn-push.gradle'
+
+afterEvaluate {
+  androidJavadocs.classpath += project.android.libraryVariants.toList().first().javaCompile.classpath
+}
